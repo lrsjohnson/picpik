@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Basic Backbone.js Demo</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css">        
+    </head>
+    <body>
+        <div id='picpikapp'>
+            <div id='main'>
+                <div>
+                    <h3>Add Pic:</h3>
+                    <a id='add-pic' href='#'>Add Picture</a>
+                </div>
+                <div id='filters'>
+                    <h3>Filter:</h3>
+                    <a id='filter-all' href='#/'>All Pictures</a>
+                    <a id='filter-favorites' href='#/favorited'>Favorites Only</a>
+                    <a id='filter-deleted' href='#/deleted'>Deleted Only</a>
+                    
+                </div>
+                <div id='pic-grid'>
+                    <h3>Picture Grid:</h3>
+                </div>
+            </div>
+            <div id='#footer'>
+                <h3>Stats:</h3>
+                <div id='footer-stats'>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Third party libraries -->
+        <script src="lib/js/jquery.js"></script>
+        <script src="lib/js/underscore.js"></script>
+        <script src="lib/js/backbone.js"></script>
+        <script src="lib/js/backbone.localStorage.js"></script>
+        
+        <!-- Our Javascript --->
+        <script src="js/app.js"></script>
+        
+        <!-- Templates -->
+        <script type="text/template" id ="pic-template">
+        <div class="pic">
+            <img src="pics/300x300/pic1.jpg" height="50px" width="50px"/>
+            <input class="favorite" type="checkbox" <%= favorited ? 'checked="checked"' : '' %> />
+            <label>Favorite</label>
+            <input class="delete" type="checkbox" <%= deleted ? 'checked="checked"' : '' %> />
+            <label>Deleted</label>
+        </div>
+        </script>
+        <script type="text/template" id="stats-template">
+        <div><%= num_favorited %> Pictures Favorited</div>
+        <div><%= num_deleted %> Pictures Deleted</div>
+        </script>
+    </body>
+</html>
