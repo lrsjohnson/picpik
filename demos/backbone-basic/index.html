@@ -5,6 +5,7 @@
     </head>
     <body>
         <div id='picpikapp'>
+            <h1>PicPik - The Picture Picker</h1>
             <div id='main'>
                 <div>
                     <h3>Add Pic:</h3>
@@ -40,7 +41,7 @@
         <!-- Templates -->
         <script type="text/template" id ="pic-template">
         <div class="pic">
-            <img src="pics/300x300/pic1.jpg" height="50px" width="50px"/>
+            <img src="pics/300x300/pic<%= picId %>.jpg" height="50px" width="50px"/>
             <input class="favorite" type="checkbox" <%= favorited ? 'checked="checked"' : '' %> />
             <label>Favorite</label>
             <input class="delete" type="checkbox" <%= deleted ? 'checked="checked"' : '' %> />

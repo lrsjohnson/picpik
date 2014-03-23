@@ -12,7 +12,7 @@ $(function() {
                 title: "Untitled Photo",
                 deleted: false,
                 favorited: false,
-                order: 0,
+                picId: Pics.nextPicId(),
             };
         },
         
@@ -42,9 +42,9 @@ $(function() {
             return this.where({favorited: true});
         },
         
-        nextOrder: function() {
+        nextPicId: function() {
             if (!this.length) return 1;
-            return this.last().get('order') + 1;
+            return (this.last().get('picId') % 4) + 1;
         },
         
         comparator: 'order'
